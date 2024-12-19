@@ -16,7 +16,12 @@ public:
 
     ~Finally() {
         if (active_) {
-            func_();
+            try {
+                func_();
+            }
+            catch(...) {
+                
+            }
         }
     }
 
